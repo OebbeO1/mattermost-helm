@@ -33,8 +33,9 @@ persistence:
     ## If defined, volume.beta.kubernetes.io/storage-class: <storageClass>
     ## Default: volume.alpha.kubernetes.io/storage-class: default
     ##
-    # storageClass:
+    storageClass: "-"
     accessMode: ReadWriteOnce
+    localPath: /home/ubuntu/storage_pv
   # existingClaim: ""
   plugins:
     enabled: true
@@ -42,8 +43,9 @@ persistence:
     ## If defined, volume.beta.kubernetes.io/storage-class: <storageClass>
     ## Default: volume.alpha.kubernetes.io/storage-class: default
     ##
-    # storageClass:
+    storageClass: "-"
     accessMode: ReadWriteOnce
+    localPath: /home/ubuntu/storage_plugins_pv
   # existingClaim: ""
 
 service:
@@ -117,7 +119,8 @@ mysql:
     ##
     storageClass: "-"
     accessMode: ReadWriteOnce
-    size: 10Gi
+    size: 8Gi
+    localPath: /home/ubuntu/storage_sql_pv
   # existingClaim: ""
 
 ## Additional pod annotations

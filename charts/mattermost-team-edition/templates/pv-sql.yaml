@@ -1,0 +1,14 @@
+{{- if and .Values.mysql.persistence.enabled (eq .Values.mysql.persistence.storageClass "-") -}}
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: {{ include "mattermost-team-edition.fullname" . }}
+spec:
+  capacity:
+    storage: {{ .Values.mysql.persistence.data.size | quote }}
+  accessModes:
+  - {{ .Values.persistence.data.accessMode | quote }}
+  hostPath:
+    path: {{ .Values.persistence.data.localPath | quote }}
+  storageClassName: ""
+{{- end }}
