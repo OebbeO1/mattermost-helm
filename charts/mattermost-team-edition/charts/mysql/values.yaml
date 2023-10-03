@@ -23,9 +23,9 @@ testFramework:
 
 ## Create a database user
 ##
-# mysqlUser:
+mysqlUser: sampleUser
 ## Default: random 10 character string
-#mysqlPassword: 
+mysqlPassword: samplePassword
 
 ## Allow unauthenticated access, uncomment to enable
 ##
