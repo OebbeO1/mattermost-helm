@@ -23,9 +23,9 @@ testFramework:
 
 ## Create a database user
 ##
-# mysqlUser:
+mysqlUser: sampleUser
 ## Default: random 10 character string
-# mysqlPassword:
+mysqlPassword: samplePassword
 
 ## Allow unauthenticated access, uncomment to enable
 ##
@@ -33,7 +33,7 @@ testFramework:
 
 ## Create a database
 ##
-# mysqlDatabase:
+mysqlDatabase: mattermost
 
 ## Specify an imagePullPolicy (Required)
 ## It's recommended to change this to 'Always' if the image tag is 'latest'
@@ -103,10 +103,11 @@ persistence:
   ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
   ##   GKE, AWS & OpenStack)
   ##
-  # storageClass: "-"
+  storageClass: "-"
   accessMode: ReadWriteOnce
   size: 8Gi
   annotations: {}
+  localPath: /home/ubuntu/storage_sql_pv
 
 ## Use an alternate scheduler, e.g. "stork".
 ## ref: https://kubernetes.io/docs/tasks/administer-cluster/configure-multiple-schedulers/
