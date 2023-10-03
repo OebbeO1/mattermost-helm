@@ -95,22 +95,14 @@ spec:
         - name: MYSQL_ALLOW_EMPTY_PASSWORD
           value: "true"
         {{- end }}
-        {{- if not (and .Values.allowEmptyRootPassword (not .Values.mysqlRootPassword)) }}
         - name: MYSQL_ROOT_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: {{ template "mysql.secretName" . }}
-              key: mysql-root-password
-              {{- if .Values.mysqlAllowEmptyPassword }}
-              optional: true
-              {{- end }}
-        {{- end }}
+          value: test
         - name: MYSQL_PASSWORD
-          value: {{ default "" .Values.mysqlPassword }}
+          value: test
         - name: MYSQL_USER
-          value: {{ default "" .Values.mysqlUser | quote }}
+          value: test
         - name: MYSQL_DATABASE
-          value: {{ default "" .Values.mysqlDatabase | quote }}
+          value: mattermost
         {{- if .Values.timezone }}
         - name: TZ
           value: {{ .Values.timezone }}
