@@ -7,8 +7,8 @@ spec:
   capacity:
     storage: {{ .Values.mysql.persistence.size | quote }}
   accessModes:
-  - {{ .Values.persistence.accessMode | quote }}
+  - {{ .Values.mysql.persistence.accessMode | quote }}
   hostPath:
-    path: {{ .Values.persistence.localPath | quote }}
+    path: {{ .Values.mysql.persistence.localPath | quote }}
   storageClassName: ""
 {{- end }}
