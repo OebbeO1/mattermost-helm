@@ -5,10 +5,10 @@ metadata:
   name: {{ include "mattermost-team-edition.fullname" . }}
 spec:
   capacity:
-    storage: {{ .Values.mysql.persistence.data.size | quote }}
+    storage: {{ .Values.mysql.persistence.size | quote }}
   accessModes:
-  - {{ .Values.persistence.data.accessMode | quote }}
+  - {{ .Values.persistence.accessMode | quote }}
   hostPath:
-    path: {{ .Values.persistence.data.localPath | quote }}
+    path: {{ .Values.persistence.localPath | quote }}
   storageClassName: ""
 {{- end }}
