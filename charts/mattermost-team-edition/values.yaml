@@ -88,7 +88,9 @@ route:
 
 ## If use this please disable the mysql chart by setting mysql.enable to false
 externalDB:
-  enabled: false
+  enabled: true
+  externalDriverType: "postgres"
+  externalConnectionString: "sampleuser:password@10.0.22.21:5432/mattermost"
 
   ## postgres or mysql
   externalDriverType: ""
@@ -98,7 +100,7 @@ externalDB:
   externalConnectionString: ""
 
 mysql:
-  enabled: true
+  enabled: false
   mysqlRootPassword: sampleRootPassword
   mysqlUser: sampleUser
   mysqlPassword: samplePassword
